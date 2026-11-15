@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OposRa 2026</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="icon" href="assets/images/gatete.png">
+    <link rel="icon" type="icon" href="assets/imagenes/gatete.png">
     <link rel="icon" href="assets/imagenes/gatete.png" type="image/x-icon">   <!-- Icono en la pestaña -->
 </head>
 <body>
@@ -141,16 +141,12 @@
     </aside>
 
     <!-- Contenedor Principal Ajustado a un Máximo de 700px -->
-    <main class="content-wrapper">
-        <div id="content-area" class="main-content">
-            <!-- Aquí se inyectarán dinámicamente las páginas desde la carpeta /secciones -->
-            <div class="cabecera-editorial">
-                <span class="pildora">Panel de Control</span>
-                <h1>Bienvenido al Simulador Premium</h1>
-                <p>Selecciona una sección en el menú lateral o despliega los bloques para comenzar tus test de evaluación.</p>
-            </div>
-        </div>
-    </main>
+    <!-- Área de contenido principal donde se inyectarán las secciones -->
+    <div class="content-wrapper">
+        <main class="main-content" id="content-area">
+            <!-- Aquí se carga secciones/inicio.html automáticamente -->
+        </main>
+    </div>
 
     <!-- Script de control de la interfaz principal -->
     <script src="main-ui.js"></script>
