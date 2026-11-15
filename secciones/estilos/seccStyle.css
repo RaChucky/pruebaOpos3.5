@@ -101,12 +101,12 @@ html {
 
     display: grid !important;
     /* En escritorio mide 380px; en móvil se adapta al 100% sin desbordar */
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--ancho-tarjeta)), var(--ancho-tarjeta)));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--ancho-tarjeta)), 1fr));
     justify-content: center;                                            /* Centra las tarjetas simétricamente en la pantalla */
     gap: 24px;
     width: 100%;
     margin-bottom: 20px;
-    padding: 0 16px;         /* Garantiza 16px de aire a izquierda y derecha en móvil */
+    padding: 0;         /* Garantiza 16px de aire a izquierda y derecha en móvil */
     box-sizing: border-box;  /* Evita que esos 16px de padding sumen ancho extra */
 }
 
@@ -271,4 +271,14 @@ dd {
     border-color: var(--color-termino);
     transform: translateY(-2px);            /* Efecto de elevación suave */
     box-shadow: 0 4px 12px var(--color-bg-indigo);
+}
+
+@media (max-width: 700px) {
+    #lista-temas .bloque-columnas-alfabetico {
+        --alto-tarjeta: auto;
+    }
+
+    #lista-temas .item-tema {
+        width: 100%;
+    }
 }
