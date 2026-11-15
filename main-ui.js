@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             const url = `secciones/${nombreSeccion}.html`;
-            const respuesta = await fetch(url);
+            const respuesta = await fetch(url, { cache: 'no-store' });
 
             if (!respuesta.ok) {
                 throw new Error(`Código de error: ${respuesta.status}`);
@@ -81,8 +81,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const html = await respuesta.text();
             
-            // 1. Inyectamos el HTML base en la zona central
-            contentArea.innerHTML = html;
+            // 1. Limpiamos el script automático de Live Server antes de inyectar el HTML
+            const htmlLimpio = html.replace(/<!-- Code injected by live-server -->[\s\S]*?<\/script>/gi, '');
+            contentArea.innerHTML = htmlLimpio;
 
             // 2. LIMPIEZA Y CARGA EXCLUSIVA DE ESTILOS DE LA SECCIÓN
             document.querySelectorAll('link[data-estilo-seccion]').forEach(el => el.remove());
@@ -96,28 +97,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.head.appendChild(estiloVivo);
             });
 
-
-            // 3. CARGA SECUENCIAL ESTRICTA DE SCRIPTS (1º Datos, 2º Dibujante)
-            const scripts = Array.from(contentArea.querySelectorAll('script'));
+            // 3. CARGA SECUENCIAL ESTRICTA DE SCRIPTS EXTERNOS
+            const scripts = Array.from(contentArea.querySelectorAll('script[src]'));
             
             for (const scriptOriginal of scripts) {
                 await new Promise((resolve) => {
                     const scriptVivo = document.createElement('script');
-                    
-                    if (scriptOriginal.src) {
-                        // Añadimos marca de tiempo para evitar bloqueos de caché
-                        scriptVivo.src = scriptOriginal.src + '?v=' + Date.now();
-                        scriptVivo.onload = resolve;  // Espera a que termine de cargar
-                        scriptVivo.onerror = resolve; // Si falla, no congela la app
-                    } else {
-                        scriptVivo.textContent = scriptOriginal.textContent;
-                        resolve();
-                    }
+                    scriptVivo.src = scriptOriginal.src + '?v=' + Date.now();
+                    scriptVivo.onload = resolve;
+                    scriptVivo.onerror = resolve;
                     
                     document.body.appendChild(scriptVivo);
                     scriptVivo.remove();
                 });
             }
+
+
 
             // Desplazamiento suave al inicio de la página
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -190,4 +185,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // --- 7. ACCESOS DIRECTOS EN LA PORTADA DE INICIO ---
+    document.addEventListener('click', (e) => {
+        const card = e.target.closest('.inicio-card[data-ir-a]');
+        if (card) {
+            const destino = card.getAttribute('data-ir-a');
+            const enlaceMenu = document.querySelector(`.nav-link[data-seccion="${destino}"]`);
+            if (enlaceMenu) {
+                enlaceMenu.click();
+            }
+        }
+    });
+
+    // Carga la portada de Inicio automáticamente al abrir la web
+    cargarSeccion('inicio');
+
 });
