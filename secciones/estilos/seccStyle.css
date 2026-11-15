@@ -297,5 +297,17 @@ dd {
     #lista-temas .item-tema {
         width: 100%;
     }
+    
+    /* Proporción equilibrada de la píldora en tablet */
+    .etiqueta-tema {
+        font-size: 0.65rem;
+        padding: 3px 10px;
+        letter-spacing: 0.08em;
+    }
+
+    .etiqueta-sobre-imagen {
+        top: 10px;
+        left: 10px;
+    }
 }
 
