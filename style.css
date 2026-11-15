@@ -379,6 +379,106 @@ body {
 }
 
 /* ==========================================================================
+   PORTADA DE INICIO (secciones/inicio.html)
+   ========================================================================== */
+.inicio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-bottom: 36px;
+}
+
+.inicio-card {
+    background-color: var(--bg-tarjeta);
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    box-shadow: var(--sombra);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.inicio-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-amber);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6);
+}
+
+.inicio-card-icono {
+    color: var(--color-amber);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 14px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: 12px;
+}
+
+.inicio-card:hover .inicio-card-icono {
+    transform: scale(1.06);
+    background-color: rgba(245, 158, 11, 0.2);
+}
+
+.inicio-card h3 {
+    font-size: 1.15rem;
+    color: var(--color-text-primary);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.inicio-card p {
+    font-size: 0.88rem;
+    color: var(--color-definicion);
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.inicio-card-accion {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-amber);
+    letter-spacing: 0.02em;
+    transition: transform 0.2s ease;
+}
+
+.inicio-card:hover .inicio-card-accion {
+    transform: translateX(4px);
+}
+
+.inicio-banner-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+    border: 1px solid var(--borde);
+    border-left: 4px solid var(--color-termino);
+    border-radius: 12px;
+    padding: 20px 24px;
+}
+
+.banner-info-icono {
+    color: var(--color-termino);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.banner-info-texto p {
+    color: var(--color-text-secondary);
+    font-size: 0.88rem;
+    line-height: 1.55;
+}
+
+
+/* ==========================================================================
    BOTÓN MÓVIL HAMBURGUESA (COMPORTAMIENTO INTERCAMBIO PLANO)
    ========================================================================== */
 .btn-menu-toggle {
