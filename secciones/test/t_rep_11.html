@@ -1,0 +1,31 @@
+<!-- Enlazamos tus estilos de tarjetas -->
+<link rel="stylesheet" href="secciones/estilos/testStyle.css">
+        
+
+<div class="cabecera-editorial">
+    <span class="pildora">Tema 11</span>
+    <h1>Sistemas de Información para la asistencia clínica</h1>
+    <p>
+    Sistemas de Información para la asistencia clínica: Historia Digital de Salud del ciudadano.
+    Base de Datos de Usuarios (BDU). Confidencialidad. Plan de Humanización del Sistema Sanitario
+    Público de Andalucía. Estrategia para la Seguridad del Paciente: identificación de eventos
+    adversos, causas y medidas de mejoras; sistema de notificaciones y registro de incidencias.
+    </p>
+</div>
+
+<!-- Menú selector de test del Tema -->
+<nav class="contenedor-selector-test"> <!-- El examen en el que se esté actualmente llevará la clase "activo" -->
+    <a href="#" data-seccion="test/t_rep_11" class="boton-selector-modalidad activo">Test 1</a>
+    <a href="#" data-seccion="test/tema11-parte2" class="boton-selector-modalidad">Test 2</a>
+    <a href="#" data-seccion="test/tema11-parte3" class="boton-selector-modalidad">Test 3</a>
+</nav>
+
+<!-- Contenedor de las preguntas. Empieza vacío, JS meterá las preguntas aquí -->
+<dl id="contenedor-test"></dl>
+
+
+<!-- Scripts en orden estricto: 1º Preguntas, 2º Motor que dibuja el test -->
+<script src="secciones/test/bdTest/t_rep_11.js"></script>
+<script src="secciones/scripts/creaTest.js"></script>
+
+    
