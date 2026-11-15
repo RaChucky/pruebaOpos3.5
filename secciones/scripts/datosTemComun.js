@@ -1,7 +1,7 @@
 var listadoTemas = [
     {
-        titulo: "Tema 1: La Constitución Española",
-        imagen: "../../assets/imagenes/tema_1.jpg",
+        titulo: "Tema 1: La Constitución Española 1",
+        imagen: "assets/imagenes/tema_1.jpg",
         definicion: "Valores superiores y principios inspiradores. Derechos y deberes fundamentales. Regulación constitucional de la Jefatura del Estado y de los Poderes Públicos. Estudio particular del derecho a la protección de la salud.",
         enlaces: [
             { texto: "Test de Repaso", url: "" },
@@ -22,7 +22,7 @@ var listadoTemas = [
     },
     {
         titulo: "Tema 3: Organización sanitaria I",
-        imagen: "../assets/imagenes/tema_3.jpg",
+        imagen: "../../assets/imagenes/tema_3.jpg",
         definicion: "Ley 14/1986, de 25 de abril, General de Sanidad. Ley 2/1998, de 15 de junio, de Salud de Andalucía. El Plan Andaluz de Salud. Conocimiento general de los Planes Marco y Estrategias vigentes de la Consejería competente en materia de Salud y del Servicio Andaluz de Salud. El Contrato Programa.",
         enlaces: [
             { texto: "Test 1", url: "" },
@@ -32,7 +32,7 @@ var listadoTemas = [
     },
     {
         titulo: "Tema 4: Organización sanitaria II",
-        imagen: "../assets/imagenes/tema_4.jpg",
+        imagen: "/assets/imagenes/tema_4.jpg",
         definicion: "Estructura, organización y competencias de la Consejería competente en materia de salud y del Servicio Andaluz de Salud. Asistencia sanitaria pública en Andalucía. Áreas de organización especial.",
         enlaces: [
             { texto: "Test de Repaso", url: "" },
@@ -42,7 +42,7 @@ var listadoTemas = [
     },
     {
         titulo: "Tema 5: Protección de Datos",
-        imagen: "../assets/imagenes/tema_5.jpg",
+        imagen: "/../assets/imagenes/tema_5.jpg",
         definicion: "Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales. Ley 1/2014, de 24 de junio, de Transparencia Pública de Andalucía.",
         enlaces: [
             { texto: "Test de Repaso", url: "" },
