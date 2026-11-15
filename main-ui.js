@@ -178,4 +178,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+        // --- 6. CLIC EN EL LOGO DE MARCA (VUELVE A INICIO) ---
+    const brandLogo = document.querySelector('.brand-logo');
+    if (brandLogo) {
+        brandLogo.addEventListener('click', (e) => {
+            e.preventDefault();
+            const linkInicio = document.querySelector('.nav-link[data-seccion="inicio"]');
+            if (linkInicio) {
+                linkInicio.click();
+            }
+        });
+    }
 });
