@@ -1,7 +1,7 @@
 var listadoTemas = [
     {
         titulo: "Tema 1: La Constitución Española",
-        imagen: "../assets/imagenes/tema_1.jpg",
+        imagen: "/assets/imagenes/tema_1.jpg",
         definicion: "Valores superiores y principios inspiradores. Derechos y deberes fundamentales. Regulación constitucional de la Jefatura del Estado y de los Poderes Públicos. Estudio particular del derecho a la protección de la salud.",
         enlaces: [
             { texto: "Test de Repaso", url: "" },
