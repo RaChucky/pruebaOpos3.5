@@ -395,41 +395,64 @@ body {
 @media (max-width: 700px) {
     html, body {
         max-width: 100%;
-        overflow-x: hidden; /* Evita el scroll horizontal fantasma */
+        overflow-x: hidden;        /* Evita el scroll horizontal fantasma */
     }
+
+    .content-wrapper,
+    .main-content {
+        min-width: 0;              /* Clave en Flexbox para evitar que los hijos ensanchen la pantalla */
+        max-width: 100%;
+    }
+
+    .content-wrapper {
+        margin-left: 0;
+        padding: 20px;             /* Padding compacto y simétrico en móvil */
+    }
+
+    .cabecera-editorial h1 {
+        font-size: 1.6rem;         /* Evita que títulos largos desborden en pantallas estrechas */
+        overflow-wrap: break-word;
+    }
+
     #lista-temas .bloque-columnas-alfabetico > * {
         max-width: 100%;
-        min-width: 0;              /* Clave en CSS Grid para que el contenido encoya */
+        min-width: 0;              /* Clave en CSS Grid para que el contenido encoja */
         overflow-wrap: break-word; /* Rompe palabras médicas muy largas si no caben */
     }
+
     .sidebar {
         transform: translateX(-100%); 
     }
+
     .sidebar.active {
         transform: translateX(0); 
     }
-    .content-wrapper {
-        margin-left: 0;
-        padding-top: 20px;
+
+    .btn-colapsar {
+        display: none !important;  /* Oculta el botón de escritorio en móvil */
     }
+
     .btn-menu-toggle {
         display: flex !important;
         top: auto;
         bottom: 20px;
         right: 20px;
-        background-color: var(--color-surface); /* Color de acento de tu web */
-        color: var(--color-text-secondary);            /* Texto e icono en contraste */
+        background-color: var(--color-surface);
+        color: var(--color-text-secondary);
         border: 1px solid rgba(255, 255, 255, 0.25);
         font-weight: 600;
         box-shadow: 0 6px 20px rgba(0, 0, 0, .45);
     }
+
     .btn-menu-toggle:hover,
     .btn-menu-toggle.is-active {
         background-color: var(--bg-tarjeta);
         color: var(--color-termino);
         border-color: var(--color-termino);
     }
+
     .sidebar.active + .menu-overlay {
         display: block; 
     }
 }
+
