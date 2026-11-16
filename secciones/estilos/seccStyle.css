@@ -101,8 +101,8 @@ html {
 
     display: grid !important;
     /* En escritorio mide 380px; en móvil se adapta al 100% sin desbordar */
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--ancho-tarjeta)), 1fr));
-    justify-content: center;                                            /* Centra las tarjetas simétricamente en la pantalla */
+    grid-template-columns: repeat(auto-fit, min(100%, var(--ancho-tarjeta)));
+    justify-content: center;   /* Centra el bloque completo de tarjetas simétricamente */
     gap: 24px;
     width: 100%;
     margin-bottom: 20px;
